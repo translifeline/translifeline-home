@@ -4,13 +4,15 @@
   "description": "Trans Lifeline's public facing page",
   "main": "app.js",
   "scripts": {
-    "sass": "node-sass public/ -o public/",
+    "sass": "node-sass styles/ -o public/styles/",
+    "pre-start": "npm run sass",
     "start": "node app.js"
   },
   "author": "Nina Chaubal",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
+    "express-livereload": "0.0.24",
     "node-sass": "^3.8.0",
     "pug": "^2.0.0-beta3",
     "susy": "^2.2.12"
