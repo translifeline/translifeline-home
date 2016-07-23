@@ -1,9 +1,36 @@
-img {
-  height: 50px;
+@import "_variables.scss";
+@import "node_modules/susy/sass/susy";
+
+header {
+  height: $header-height;
+  //background-color: $background-color;
+
+  .logo {
+    display: block;
+    img {
+      height: 50px;
+    }
+  }
+
+  .submenu {
+    display: none;
+  }
+
+  .menu > li {
+    display: inline;
+    margin: 25px;
+    font-weight: bold;
+    a, span {
+      text-decoration: none;
+      cursor: pointer;
+      color: $primary-color;
+    }
+    :hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-menu {
-  li {
-    display: inline;
-  }
+.no-banner {
+  margin-bottom: $vertical-spacer;
 }

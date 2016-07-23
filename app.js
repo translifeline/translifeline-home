@@ -1,10 +1,13 @@
 'use strict';
 
 const express = require('express');
+const favicon = require('serve-favicon');
 const livereload = require('express-livereload');
 const controllers = require('./controllers');
 
 const app = express();
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
+
 // Use livereload. TODO(nina): Investigate why livereload won't work.
 livereload(app, {});
 

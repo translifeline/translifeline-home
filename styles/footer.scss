@@ -1,0 +1,17 @@
+@import "_variables.scss";
+
+footer {
+  background-color: $primary-color;
+  margin-top: $vertical-spacer;
+  @if (lightness($primary-color) > 50) {
+    color: black; // Lighter backgorund, return dark color
+  } @else {
+    color: white; // Darker background, return light color
+  }
+
+  div {
+    text-align: right;
+    padding-top: $vertical-spacer;
+    padding-bottom: 2*$vertical-spacer;
+  }
+}

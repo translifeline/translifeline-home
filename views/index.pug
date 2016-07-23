@@ -1,7 +1,11 @@
-extends ./layout.pug
+extends ./common/layout.pug
 
 block title
   title Trans Lifeline - 877-565-8860
 
 block content
-  h1 Home
+  h1
+    span='US:'
+    a(href='tel:+18775658860')='(877) 565-8860'
+    span='Canada:'
+    a(href='tel:+18773306366')='(877) 330-6366'

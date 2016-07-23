@@ -1,0 +1,20 @@
+header(class=showBanner ? '' : 'no-banner')
+  a.logo(href='/')
+    img(src='images/logo.png')
+  ul.menu
+    each item in menu
+      li
+        if item.url
+          a(href=item.url)=item.label
+        else
+          span=item.label
+        if item.submenu
+          ul.submenu
+            each subitem in item.submenu
+              li
+                if subitem.url
+                  a(href=subitem.url)=subitem.label
+                else
+                  span=subitem.label
+  if showBanner
+    include ./banner.pug

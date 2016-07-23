@@ -11,7 +11,7 @@ function getMenuData() {
       new MenuItem('Leadership', '/leadership'),
       new MenuItem('Staff', '/staff')
     ]),
-    new MenuItem('Survey', '/survey'),
+    new MenuItem('Survey', 'http://www.transmentalhealthsurvey.org'),
     new MenuItem('Get Involved', null, [
       new MenuItem('Ways to Help', '/help'),
       new MenuItem('Volunteer Sign-up', 'http://apply.translifeline.org'),
