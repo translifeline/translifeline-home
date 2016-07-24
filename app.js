@@ -8,8 +8,11 @@ const controllers = require('./controllers');
 const app = express();
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
-// Use livereload. TODO(nina): Investigate why livereload won't work.
-livereload(app, {});
+if (process.env.NODE_ENV === 'development') {
+  livereload(app, {
+    watchDir: process.cwd()
+  });
+}
 
 // Set view engine.
 app.set('view engine', 'pug');
