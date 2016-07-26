@@ -3,34 +3,77 @@
 
 header {
   height: $header-height;
-  //background-color: $background-color;
+  padding-top: 5px;
+  background-color: $background-color;
 
   .logo {
     display: block;
+    float: left;
+    margin-left: $horizontal-spacer;
     img {
       height: 50px;
     }
   }
 
-  .submenu {
-    display: none;
+  .fa {
+    font-size: 30px;
+    margin: 10px;
+    color: $background-color;
   }
 
-  .menu > li {
-    display: inline;
-    margin: 25px;
-    font-weight: bold;
-    a, span {
-      text-decoration: none;
-      cursor: pointer;
-      color: $primary-color;
+  #menu-button {
+    color: $primary-color;
+  }
+
+  nav.expanded {
+    right: 0px;
+  }
+
+  nav {
+    position: fixed;
+    width: $menu-width;
+    min-height: 100vh;
+    margin-bottom: 0;
+    margin-top: -5px;
+    padding-top: 5px;
+    right: -1 * $menu-width;
+    transition: right 1s ease-in-out;
+    z-index: 2;
+    // Color scheme is inverse of that of the rest of the page.
+    background-color: $darker-primary-color;
+    color: $background-color;
+  }
+
+  .menu {
+    list-style: none;
+    padding-left: 0;
+    padding-top: $header-height;
+    margin: 0;
+    font-size: 1.4em;
+
+    > li {
+      margin: $horizontal-spacer;
+      font-weight: bold;
+      a, span {
+        text-decoration: none;
+        cursor: pointer;
+        color: $background-color;
+      }
     }
-    :hover {
-      text-decoration: underline;
+
+    .submenu {
+      list-style: none;
+      padding: 0;
+
+      > li {
+        margin-left: $horizontal-spacer;
+        margin-top: $horizontal-spacer/2;
+      }
     }
   }
 }
 
 .no-banner {
+  box-shadow: 0 0 3px black;
   margin-bottom: $vertical-spacer;
 }

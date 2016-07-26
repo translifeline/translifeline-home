@@ -1,20 +1,32 @@
 header(class=showBanner ? '' : 'no-banner')
   a.logo(href='/')
-    img(src='images/logo.png')
-  ul.menu
-    each item in menu
-      li
-        if item.url
-          a(href=item.url)=item.label
-        else
-          span=item.label
-        if item.submenu
-          ul.submenu
-            each subitem in item.submenu
-              li
-                if subitem.url
-                  a(href=subitem.url)=subitem.label
-                else
-                  span=subitem.label
+    img(src='images/logo.svg')
+  i.fa.fa-bars.fa-pull-right#menu-button
+  nav
+    i.fa.fa-bars.fa-pull-right
+    ul.menu
+      each item in menu
+        li
+          if item.url
+            a(href=item.url)=item.label
+          else
+            span=item.label
+          if item.submenu
+            ul.submenu
+              each subitem in item.submenu
+                li
+                  if subitem.url
+                    a(href=subitem.url)=subitem.label
+                  else
+                    span=subitem.label
+  script.
+    $('#menu-button').click(function() {
+      $('nav').toggleClass('expanded');
+      $('#menu-button').hide();
+    });
+    $('nav').click(function() {
+      $('nav').removeClass('expanded');
+      $('#menu-button').show();
+    });
   if showBanner
     include ./banner.pug
