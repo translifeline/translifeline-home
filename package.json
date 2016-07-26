@@ -10,6 +10,7 @@
     "sass-watch": "node-sass -w styles/ -o public/styles/",
     "start-dev": "export NODE_ENV=development && parallelshell 'npm run sass-watch' 'nodemon app.js'"
   },
+  "private": true,
   "author": "Nina Chaubal",
   "license": "ISC",
   "dependencies": {
