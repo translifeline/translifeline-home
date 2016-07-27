@@ -20,7 +20,8 @@
     "node-sass": "^3.8.0",
     "pug": "^2.0.0-beta3",
     "serve-favicon": "^2.3.0",
-    "susy": "^2.2.12"
+    "susy": "^2.2.12",
+    "tingodb": "^0.4.2"
   },
   "devDependencies": {
     "express-livereload": "0.0.24",
