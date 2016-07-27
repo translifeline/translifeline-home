@@ -19,19 +19,5 @@ header(class=showBanner ? '' : 'no-banner')
                     a(href=subitem.url)=subitem.label
                   else
                     span=subitem.label
-  script.
-    $('#menu-button').click(function() {
-      $('nav').toggleClass('expanded');
-      $('#menu-button').hide();
-    });
-    $('nav').click(function() {
-      $('nav').removeClass('expanded');
-      $('#menu-button').show();
-    });
-    $('.menu span').click(function() {
-      $(this).siblings('.submenu').toggleClass('submenu-collapsed');
-      $(this).children('i').toggleClass('fa-caret-down').toggleClass('fa-caret-up');
-      event.stopPropagation();
-    });
   if showBanner
     include ./banner.pug

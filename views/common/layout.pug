@@ -8,10 +8,10 @@ html
     meta(name="msapplication-tap-highlight", content="no")
     block title
       title Trans Lifeline
-    script(src="https://code.jquery.com/jquery-3.1.0.min.js", integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=",crossorigin="anonymous")
     link(href='/styles/global.css', rel='stylesheet')
     != LRScript
   body
     include ./header.pug
     block content
     include ./footer.pug
+    script(src="/js/bundle.js")
