@@ -9,10 +9,10 @@ header(class=showBanner ? '' : 'no-banner')
         li
           if item.url
             a(href=item.url)=item.label
-          else
+          else if item.submenu
             span=item.label
-          if item.submenu
-            ul.submenu
+              i.fa.fa-caret-down
+            ul.submenu.submenu-collapsed
               each subitem in item.submenu
                 li
                   if subitem.url
@@ -27,6 +27,11 @@ header(class=showBanner ? '' : 'no-banner')
     $('nav').click(function() {
       $('nav').removeClass('expanded');
       $('#menu-button').show();
+    });
+    $('.menu span').click(function() {
+      $(this).siblings('.submenu').toggleClass('submenu-collapsed');
+      $(this).children('i').toggleClass('fa-caret-down').toggleClass('fa-caret-up');
+      event.stopPropagation();
     });
   if showBanner
     include ./banner.pug
