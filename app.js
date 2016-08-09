@@ -2,13 +2,13 @@
 
 const express = require('express');
 const favicon = require('serve-favicon');
-const livereload = require('express-livereload');
 const controllers = require('./controllers');
 
 const app = express();
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 if (process.env.NODE_ENV === 'development') {
+  const livereload = require('express-livereload');
   livereload(app, {
     watchDir: process.cwd()
   });
