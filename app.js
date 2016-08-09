@@ -18,10 +18,6 @@ if (process.env.NODE_ENV === 'development') {
 app.set('view engine', 'pug');
 // Serve static files from /public.
 app.use(express.static(__dirname + '/public'));
-// Initialize database
-var Engine = require('tingodb')();
-var db = new Engine.Db('/data/db', {});
-app.set('db', db);
 // Initialize controllers.
 controllers(app);
 
