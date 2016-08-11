@@ -2,3 +2,4 @@ node_modules
 data
 public/styles/*.css
 public/js/*.js
+*.log
