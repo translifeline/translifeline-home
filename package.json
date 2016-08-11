@@ -10,7 +10,7 @@
     "start": "node app.js",
     "browserify-watch": "watchify client/main.js -o public/js/bundle.js -d",
     "sass-watch": "node-sass -w styles/ -o public/styles/",
-    "start-dev": "export NODE_ENV=development && parallelshell 'npm run sass-watch' 'npm run browserify-watch' 'nodemon app.js'"
+    "start-dev": "export NODE_ENV=development && export MONGODB_URI=mongodb://localhost:27017/translifeline-home && parallelshell 'npm run sass-watch' 'npm run browserify-watch' 'nodemon app.js'"
   },
   "private": true,
   "author": "Nina Chaubal",
@@ -20,6 +20,7 @@
     "express": "^4.14.0",
     "font-awesome": "^4.6.3",
     "jquery-browserify": "^1.8.1",
+    "mongodb": "^2.2.5",
     "node-normalize-scss": "^1.3.2",
     "node-sass": "^3.8.0",
     "pug": "^2.0.0-beta3",
