@@ -7,9 +7,7 @@ function getMenuData() {
     new MenuItem('About Us', null, [
       new MenuItem('Mission', '/mission'),
       new MenuItem('FAQ', '/faq'),
-      new MenuItem('Board', '/board'),
-      new MenuItem('Leadership', '/leadership'),
-      new MenuItem('Staff', '/staff')
+      new MenuItem('Contact', '/contact')
     ]),
     new MenuItem('Survey', 'http://www.transmentalhealthsurvey.org'),
     new MenuItem('Get Involved', null, [

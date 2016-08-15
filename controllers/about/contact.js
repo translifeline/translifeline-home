@@ -5,13 +5,13 @@ const banner = require('../common/banner')
 
 /* A controller for the home page. */
 function controller(app) {
-  app.get('/leadership', function (req, res) {
+  app.get('/contact', function (req, res) {
     let data = {
       menu: menu(),
       showBanner: true,
       banner: banner()
     };
-    res.render('about/leadership', data);
+    res.render('about/contact', data);
   });
 }
 
