@@ -16,6 +16,7 @@
   "author": "Nina Chaubal",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "browserify": "^13.1.0",
     "express": "^4.14.0",
     "font-awesome": "^4.6.3",

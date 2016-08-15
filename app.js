@@ -4,6 +4,7 @@ const express = require('express');
 const favicon = require('serve-favicon');
 const controllers = require('./controllers');
 const MongoClient = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
 
 const app = express();
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
@@ -19,6 +20,9 @@ if (process.env.NODE_ENV === 'development') {
 app.set('view engine', 'pug');
 // Serve static files from /public.
 app.use(express.static(__dirname + '/public'));
+// Initialize body parser.
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 // Initialize database.
 MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
   if (err) {
