@@ -20,5 +20,5 @@ header(class=showBanner ? '' : 'no-banner')
                     a(href=subitem.url)=subitem.label
                   else
                     span=subitem.label
-  if showBanner
-    include ./banner.pug
+if showBanner
+  include ./banner.pug
