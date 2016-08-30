@@ -16,3 +16,8 @@ h1, h2, h3, h4, h5, h6, a {
 a:hover {
   color: $darker-primary-color;
 }
+
+#container {
+  margin-left: $horizontal-spacer;
+  font-size: 1.5em;
+}

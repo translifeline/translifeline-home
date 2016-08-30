@@ -12,6 +12,7 @@ html
     != LRScript
   body
     include ./header.pug
-    block content
+    div#container
+      block content
     include ./footer.pug
     script(src="/js/bundle.js")
