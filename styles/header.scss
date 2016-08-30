@@ -51,9 +51,8 @@ header {
   .menu {
     list-style: none;
     padding-left: 0;
-    padding-top: $header-height;
     margin: 0;
-    font-size: 1.4em;
+    font-size: 4vh;
 
     > li {
       margin: $horizontal-spacer;
