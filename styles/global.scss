@@ -5,8 +5,11 @@
 @import "_variables.scss";
 @import "_imports.scss";
 
-body {
+html,body {
   font-family: "Raleway";
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 h1, h2, h3, h4, h5, h6, a {
@@ -18,6 +21,12 @@ a:hover {
 }
 
 #container {
-  margin-left: $horizontal-spacer;
+  min-height: 100%;
+  position: relative;
+}
+
+#content {
   font-size: 1.5em;
+  margin-left: $horizontal-spacer;
+  padding-bottom: $footer-height + 2*$vertical-spacer;
 }

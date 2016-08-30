@@ -3,11 +3,12 @@
 footer {
   background-color: $primary-color;
   margin-top: $vertical-spacer;
+  height: $footer-height;
+  padding-top: $vertical-spacer;
+  width: 100%;
   position: absolute;
-  right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
 
   @if (lightness($primary-color) > 50) {
     color: black; // Lighter backgorund, return dark color
@@ -16,11 +17,8 @@ footer {
   }
 
   p {
+    margin-right: $horizontal-spacer;
     display: inline;
     text-align: right;
-    margin-top: 0;
-    padding-top: $vertical-spacer/2;
-    padding-bottom: 2*$vertical-spacer;
-    margin-right: $horizontal-spacer;
   }
 }

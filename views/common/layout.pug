@@ -11,8 +11,9 @@ html
     link(href='/styles/global.css', rel='stylesheet')
     != LRScript
   body
-    include ./header.pug
     div#container
-      block content
-    include ./footer.pug
+      include ./header.pug
+      div#content
+        block content
+      include ./footer.pug
     script(src="/js/bundle.js")
