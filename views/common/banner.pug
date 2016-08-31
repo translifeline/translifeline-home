@@ -1,3 +1,6 @@
 section.banner
-  a(href='http://www.transmentalhealthsurvey.org')
-    img(src='/images/banner.jpg')
+  ul(data-num=banner.length)
+    each bannerItem, i in banner
+      li(id='banner'+i style='background-color:'+bannerItem.bg)
+        a(href=bannerItem.link)
+          img(src=bannerItem.img alt=bannerItem.alt)
