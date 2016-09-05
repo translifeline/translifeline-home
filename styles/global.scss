@@ -33,8 +33,33 @@ a:hover {
   position: relative;
 }
 
+
 #content {
   font-size: 1.5em;
   margin: 0 $horizontal-spacer;
   padding-bottom: $footer-height + 2*$vertical-spacer;
+}
+
+@include susy-breakpoint($wide, $wideLayout) {
+  #content.has-sidebar {
+    @include span(4 wide);
+  }
+
+  .sidebar {
+    @include span(1);
+  }
+
+  footer {
+    @include span(6);
+  }
+}
+
+@include susy-breakpoint($narrow, $narrowLayout) {
+  #content.has-sidebar {
+    @include span(1);
+  }
+
+  .sidebar {
+    @include span(1);
+  }
 }

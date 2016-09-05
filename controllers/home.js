@@ -9,7 +9,8 @@ function controller(app) {
     let data = {
       menu: menu(),
       showBanner: true,
-      banner: banner()
+      banner: banner(),
+      showSidebar: true
     };
     res.render('index', data);
   });

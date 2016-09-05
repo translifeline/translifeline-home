@@ -13,7 +13,9 @@ html
   body
     div#container
       include ./header.pug
-      div#content
+      div#content(class=showSidebar ? 'has-sidebar' : '')
         block content
+      if showSidebar
+        include ./sidebar.pug
       include ./footer.pug
     script(src="/js/bundle.js")
