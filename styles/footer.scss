@@ -5,10 +5,6 @@ footer {
   margin-top: $vertical-spacer;
   height: $footer-height;
   padding-top: $vertical-spacer;
-  //width: 100%;
-  //position: absolute;
-  //bottom: 0;
-  //left: 0;
 
   @if (lightness($primary-color) > 50) {
     color: black; // Lighter backgorund, return dark color

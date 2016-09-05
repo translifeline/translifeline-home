@@ -1,0 +1,37 @@
+@import "_variables.scss";
+
+.sidebar {
+  padding-top: $vertical-spacer;
+
+  .social-widget {
+    margin-top: $vertical-spacer;
+  }
+
+  label, input {
+    display: block;
+  }
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  input {
+    margin-bottom: $vertical-spacer;
+  }
+
+  #submit {
+    font-size: 1.5em;
+    background-color: $primary-color;
+    color: white;
+    padding:5px 15px;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: $vertical-spacer;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+}

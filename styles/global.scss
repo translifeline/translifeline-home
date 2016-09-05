@@ -40,17 +40,22 @@ a:hover {
   padding-bottom: $footer-height + 2*$vertical-spacer;
 }
 
+.sidebar {
+  margin: 0 $horizontal-spacer;
+}
+
 @include susy-breakpoint($wide, $wideLayout) {
   #content.has-sidebar {
-    @include span(4 wide);
+    @include span(8);
   }
 
   .sidebar {
-    @include span(1);
+    @include span(3);
+    float: right;
   }
 
   footer {
-    @include span(6);
+    @include span(12);
   }
 }
 
