@@ -5,6 +5,7 @@ const home = require('./home');
 const getInvolved = require('./get-involved');
 const donate = require('./donate');
 const press = require('./press');
+const admin = require('./admin');
 const sidebar = require('./common/sidebar');
 
 /*
@@ -16,6 +17,7 @@ function loadControllers(app) {
   getInvolved(app);
   donate(app);
   press(app);
+  admin(app);
   sidebar(app);
 }
 
