@@ -1,1 +1,47 @@
 @import "_variables.scss";
+
+.donate-ask {
+  text-align: center;
+
+  a {
+    display: block;
+    color: white;
+    background-color: $primary-color;
+    padding: 20px 40px;
+    margin: $vertical-spacer auto;
+    width: 250px;
+    border: 0 none;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.3em;
+  }
+
+  a:hover {
+    color: white;
+    background-color: $darker-primary-color;
+  }
+}
+
+.bottom-shadow {
+  padding-bottom: $vertical-spacer;
+  box-shadow: 0 1px 0 $secondary-color;
+}
+
+.about {
+  img {
+    width: 100%;
+  }
+}
+
+@include susy-breakpoint($wide, $wideLayout) {
+  .about {
+    @include span(6);
+  }
+}
+
+@include susy-breakpoint($narrow, $narrowLayout) {
+  .about {
+    @include span(1);
+  }
+}
