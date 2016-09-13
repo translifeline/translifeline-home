@@ -44,6 +44,11 @@ a:hover {
   margin: 0 $horizontal-spacer;
 }
 
+.center {
+  margin: 0 auto;
+  display: block;
+}
+
 @include susy-breakpoint($wide, $wideLayout) {
   #content.has-sidebar {
     @include span(8);
