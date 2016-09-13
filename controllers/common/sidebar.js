@@ -43,7 +43,7 @@ function controller(app) {
         res.status(500).end();
       });
     } else {
-      console.log('To be added to list ' + listId + ': ' + merge);
+      console.log('To be added to list: ' + merge);
     }
   });
 }
