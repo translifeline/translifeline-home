@@ -4,12 +4,12 @@ section.sidebar
     p#required.
       Email is required for subscription.
     form#subscribe
-      label(for='email' required) Email
-      input#email(type='text').full-width
-      label(for='first') First Name
-      input#first(type='text').full-width
-      label(for='last') Last Name
-      input#last(type='text').full-width
+      label Email
+      input#email(type='text' placeholder='you@emailaddress.com' aria-label='Email' autocomplete='email' required).full-width
+      label First Name
+      input#first(type='text' placeholder='First' aria-label='First name' autocomplete='given-name').full-width
+      label Last Name
+      input#last(type='text' placeholder='Last' aria-label='Last name' autocomplete='family-name').full-width
       button#submit(type='submit') Subscribe
     p#validate.
       Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.
