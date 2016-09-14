@@ -1,15 +1,16 @@
 'use strict';
 
 const menu = require('../common/menu');
+const passport = require('passport');
 
 /* A controller for the home page. */
 function controller(app) {
-  app.get('/admin', function (req, res) {
+  app.get('/admin', passport.authenticate('basic', { session: false }), function (req, res) {
     let data = {
       menu: menu(),
       showBanner: false
     };
-    res.render('admin', data);
+    res.render('admin/admin', data);
   });
 }
 
