@@ -2,6 +2,10 @@
   "name": "translifeline-home",
   "version": "1.0.0",
   "description": "Trans Lifeline's public facing page",
+  "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=3.10.3"
+  },
   "main": "app.js",
   "scripts": {
     "browserify": "browserify client/main.js -o public/js/bundle.js",
