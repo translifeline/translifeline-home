@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const BasicStrategy = require('passport-http').BasicStrategy;
 const bcrypt = require('bcrypt');
+const morgan = require('morgan')
 
 const app = express();
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
@@ -19,6 +20,8 @@ if (process.env.NODE_ENV === 'development') {
   });
 }
 
+// Morgan for logging.
+app.use(morgan('common'))
 // Set view engine.
 app.set('view engine', 'pug');
 // Serve static files from /public.
