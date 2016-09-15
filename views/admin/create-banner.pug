@@ -1,0 +1,17 @@
+extends ../common/layout.pug
+
+block title
+  title Add Banner Image Admin - Trans Lifeline
+
+block content
+  h1='Add Banner Image'
+  form#add-image
+    label Image
+    input#image(type='file' accept='image/*')
+    label Link
+    input#link(type='text')
+    label Alt text
+    input#alt(type='text')
+    label Background Color
+    input#bg(type='color' value='#242424')
+    button#submit(type='submit') Add to banner

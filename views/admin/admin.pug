@@ -5,3 +5,28 @@ block title
 
 block content
   h1='Admin'
+  section#admin-donate
+  section#admin-banner
+    h2='Banner'
+    div
+      i.fa.fa-plus &nbsp;
+      a(href='/admin/create-banner') Add banner image
+    ul
+      each bannerItem, i in banner
+        li
+          div.image
+            img(src=bannerItem.img)
+          div.info(data-id=bannerItem._id)
+            label Link
+            input.link(type='text' value=bannerItem.link)
+            label Alt text
+            input.alt(type='text' value=bannerItem.alt)
+            label Background Color
+            input.bg(type='color' value=bannerItem.bg)
+          div.update
+            div
+              i.fa.fa-refresh &nbsp;
+              a(href='#' data-op='update' data-id=bannerItem._id) Update
+            div
+              i.fa.fa-trash-o &nbsp;
+              a(href='#' data-op='remove' data-id=bannerItem._id) Remove

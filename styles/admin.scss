@@ -1,0 +1,84 @@
+@import "_variables.scss";
+
+#admin-banner, #add-image {
+  label, input {
+    display: block;
+    width: 100%;
+    font-size: 0.8em;
+  }
+}
+
+#add-image {
+  input {
+    margin-bottom: $vertical-spacer;
+  }
+
+  #submit {
+    font-size: 0.8em;
+    background-color: $primary-color;
+    color: white;
+    padding:5px 15px;
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: $vertical-spacer;
+  }
+}
+
+@include susy-breakpoint($wide, $wideLayout) {
+  #add-image {
+    @include span(3);
+  }
+}
+
+#admin-banner {
+  ul {
+    list-style-type:none;
+
+    li {
+      display: block;
+      margin-top: $vertical-spacer;
+    }
+  }
+
+  .update div {
+    margin: $vertical-spacer 0;
+  }
+
+  @include susy-breakpoint($wide, $wideLayout) {
+    img {
+      height: 150px;
+    }
+
+    .image {
+      @include span(6);
+    }
+
+    .info {
+      @include span(4);
+    }
+
+    .update {
+      @include span(2);
+    }
+  }
+
+  @include susy-breakpoint($narrow, $narrowLayout) {
+    img {
+      height: 100px;
+    }
+
+    .image {
+      @include span(1);
+    }
+
+    .info {
+      @include span(1);
+    }
+
+    .update {
+      @include span(1);
+    }
+  }
+}

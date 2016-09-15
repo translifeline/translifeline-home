@@ -24,7 +24,7 @@ app.set('view engine', 'pug');
 // Serve static files from /public.
 app.use(express.static(__dirname + '/public'));
 // Initialize body parser.
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false, limit: '50mb' }));
 app.use(bodyParser.json());
 // Initialize database.
 MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
