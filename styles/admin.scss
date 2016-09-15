@@ -30,6 +30,10 @@
   #add-image {
     @include span(3);
   }
+
+  #admin-banner li {
+    @include span(12);
+  }
 }
 
 #admin-banner {
@@ -38,7 +42,7 @@
 
     li {
       display: block;
-      margin-top: $vertical-spacer;
+      margin: $vertical-spacer 0;
     }
   }
 
