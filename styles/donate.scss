@@ -1,0 +1,37 @@
+@import "_variables.scss";
+
+#donate {
+  @include susy-breakpoint($wide, $wideLayout) {
+    section {
+      @include span(5);
+    }
+
+    section:first-child {
+      @include push(1);
+    }
+  }
+
+  @include susy-breakpoint($narrow, $narrowLayout) {
+    section {
+      @include span(1);
+    }
+  }
+}
+
+#donate {
+  #progress {
+   width: 100%;
+   height: 35px;
+   background-color: #9f9f9f;
+   position: relative;
+   border-radius: 10px;
+  }
+
+  #bar {
+   height: 35px;
+   background-color: #503164;
+   width: 2%;
+   min-width: 2%;
+   border-radius: 10px;
+  }
+}

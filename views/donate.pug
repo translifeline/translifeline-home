@@ -4,4 +4,19 @@ block title
   title Donate - Trans Lifeline
 
 block content
-  h1='Donate'
+  div#donate
+    section
+      img(src=donate.img alt=donate.alt)
+    section
+      h1=donate.title
+      if donate.text
+        p=donate.text
+      h2='$' + progress.amountRaised
+      div#progress
+        if progress.percent > 0
+          div#bar(width=progress.percent + '%')
+      h3.
+        #{Math.round(progress.percent)}% Raised of $#{progress.goal} Goal.
+      if progress.matchedAmount > 0
+        h3.
+          $#{progress.matchedAmount} matched.

@@ -18,7 +18,7 @@ function admin($) {
     var end = $('#admin-donate #end').val();
     var matchMultiplier = $('#admin-donate #match-multiplier').val();
     var matchMax = $('#admin-donate #match-max').val();
-    imageDataUrl(file, 500, 650, function(img) {
+    imageDataUrl(file, 600, 800, function(img) {
       $.ajax({
         type: 'POST',
         url: '/donate',
