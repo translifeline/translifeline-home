@@ -6,6 +6,31 @@ block title
 block content
   h1='Admin'
   section#admin-donate
+    h2='Donate'
+    form
+      section.form-section
+        label Campaign Title
+        input#title(type='text' value=donate && donate.title ? donate.title : '')
+        label Text
+        textarea#text(value=donate && donate.text ? donate.text : '' rows='10')
+      section.form-section
+        label Goal Amount
+        input#goal(type='text' value=donate && donate.goal ? donate.goal: '')
+        label Start Date
+        input#start(type='date' value=donate && donate.start ? donate.start : new Date().toJSON().slice(0,10))
+        label End Date
+        input#end(type='date' value=donate && donate.end ? donate.end : new Date().toJSON().slice(0,10))
+        label Match Multiplier. Set to 0 if we don't have a match.
+        input#match-multiplier(type='text' value=donate && donate.match-multiplier ? donate.match-multiplier : '0')
+        label Maximum Match Amount
+        input#match-max(type='text' value=donate && donate.match-max ? donate.match-max : '0')
+      section.form-section
+        label Campaign Image
+        if donate && donate.img
+          img(src=donate.img)
+        input#image(type='file' accept='image/*')
+      section#submit-section
+        button#submit(type='submit') Save changes
   section#admin-banner
     h2='Banner'
     div

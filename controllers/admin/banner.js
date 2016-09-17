@@ -4,7 +4,7 @@ const menu = require('../common/menu');
 const passport = require('passport');
 const mongodb = require('mongodb');
 
-/* A controller for the admin page. */
+/* A controller for banner admin routes. */
 function controller(app) {
   // Interface for creating a new banner image
   app.get('/admin/create-banner', passport.authenticate('basic', { session: false }), function (req, res) {

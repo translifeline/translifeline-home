@@ -6,6 +6,38 @@ const imageDataUrl = require('./image-data-url');
 JS needed by admin features.
 */
 function admin($) {
+  // Donate data.
+  $('#admin-donate #submit').click(function(event) {
+    event.preventDefault();
+    var title = $('#admin-donate #title').val();
+    var text = $('#admin-donate #text').val();
+    var file = $('#admin-donate #image').get(0).files[0];
+    var goal = $('#admin-donate #goal').val();
+    var start = $('#admin-donate #start').val();
+    var end = $('#admin-donate #end').val();
+    var matchMultiplier = $('#admin-donate #match-multiplier').val();
+    var matchMax = $('#admin-donate #match-max').val();
+    imageDataUrl(file, 500, 650, function(img) {
+      $.ajax({
+        type: 'POST',
+        url: '/donate',
+        data: {
+          title: title,
+          text: text,
+          img: img,
+          goal: goal,
+          start: start,
+          end: end,
+          matchMultiplier: matchMultiplier,
+          matchMax: matchMax
+        },
+        success: function() {
+          window.location =  '/admin';
+        }
+      });
+    });
+  });
+
   // Add banner image.
   $('#add-image #submit').click(function(event) {
     event.preventDefault();

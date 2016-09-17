@@ -1,6 +1,6 @@
 @import "_variables.scss";
 
-#admin-banner, #add-image {
+#admin-donate, #admin-banner, #add-image {
   label, input {
     display: block;
     width: 100%;
@@ -12,7 +12,9 @@
   input {
     margin-bottom: $vertical-spacer;
   }
+}
 
+#admin-donate, #add-image {
   #submit {
     font-size: 0.8em;
     background-color: $primary-color;
@@ -26,13 +28,45 @@
   }
 }
 
+#admin-donate  {
+  #text {
+    width: 100%;
+  }
+
+  img {
+    max-height: 275px;
+  }
+
+  #submit-section {
+    margin-top: $vertical-spacer;
+  }
+
+  textarea {
+    font-size: 0.8em;
+  }
+}
+
 @include susy-breakpoint($wide, $wideLayout) {
   #add-image {
     @include span(3);
   }
 
+  #admin-banner {
+    @include span(12);
+  }
+
   #admin-banner li {
     @include span(12);
+  }
+
+  #admin-donate {
+    .form-section {
+      @include span(4);
+    }
+
+    #submit-section {
+      @include span(12);
+    }
   }
 }
 
