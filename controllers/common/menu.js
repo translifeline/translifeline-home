@@ -17,7 +17,6 @@ function getMenuData() {
       new MenuItem('Host Resources', '/host-resources')
     ]),
     new MenuItem('Donate', '/donate'),
-    new MenuItem('Press', '/press'),
     new MenuItem('Store', 'http://www.redbubble.com/people/translifeline/shop'),
     new MenuItem('Blog', 'https://medium.com/@Translifeline'),
     new MenuItem('Login', 'http://hotline.translifeline.org/login'),
