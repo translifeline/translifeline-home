@@ -11,6 +11,7 @@ function controller(app) {
       title: req.body.title,
       text: req.body.text,
       img: req.body.img,
+      alt: req.body.alt,
       goal: req.body.goal,
       start: req.body.start,
       end: req.body.end,

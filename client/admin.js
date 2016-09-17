@@ -12,6 +12,7 @@ function admin($) {
     var title = $('#admin-donate #title').val();
     var text = $('#admin-donate #text').val();
     var file = $('#admin-donate #image').get(0).files[0];
+    var alt = $('#admin-donate #alt').val();
     var goal = $('#admin-donate #goal').val();
     var start = $('#admin-donate #start').val();
     var end = $('#admin-donate #end').val();
@@ -25,6 +26,7 @@ function admin($) {
           title: title,
           text: text,
           img: img,
+          alt: alt,
           goal: goal,
           start: start,
           end: end,

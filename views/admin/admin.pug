@@ -29,7 +29,9 @@ block content
         if donate && donate.img
           img(src=donate.img)
         input#image(type='file' accept='image/*')
-      section#submit-section
+        label Alt text
+        image#alt(type='text' value=donate && donate.alt ? donate.alt : '')
+      section#submit-sections
         button#submit(type='submit') Save changes
   section#admin-banner
     h2='Banner'
