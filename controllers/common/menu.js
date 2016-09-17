@@ -19,8 +19,7 @@ function getMenuData() {
     new MenuItem('Donate', '/donate'),
     new MenuItem('Store', 'http://www.redbubble.com/people/translifeline/shop'),
     new MenuItem('Blog', 'https://medium.com/@Translifeline'),
-    new MenuItem('Login', 'http://hotline.translifeline.org/login'),
-
+    new MenuItem('Login', 'http://hotline.translifeline.org/login')
   ];
 }
 
