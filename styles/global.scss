@@ -20,14 +20,6 @@ h1, h2, h3, h4, h5, h6, a {
   color: $primary-color;
 }
 
-h1 {
-  font-size: 2em;
-}
-
-h2 {
-  font-size: 1.3em;
-}
-
 a:hover {
   color: $darker-primary-color;
 }
@@ -38,7 +30,6 @@ a:hover {
 }
 
 #content {
-  font-size: 1.5em;
   padding-bottom: 2*$vertical-spacer;
 }
 
@@ -59,10 +50,36 @@ a:hover {
   .sidebar {
     margin: 0 $horizontal-spacer;
   }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+
+  #content {
+    font-size: 1.5em;
+    padding-bottom: 2*$vertical-spacer;
+  }
 }
 
 @include susy-breakpoint($narrow, $narrowLayout) {
   #content.has-sidebar {
     @include span(1);
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+  #content {
+    font-size: 1em;
+    padding-bottom: 2*$vertical-spacer;
   }
 }
