@@ -59,7 +59,13 @@
     @include span(12);
   }
 
+  #title, #add-banner-image {
+    @include span(12);
+  }
+
   #admin-donate {
+    @include span(12);
+
     .form-section {
       @include span(4);
     }

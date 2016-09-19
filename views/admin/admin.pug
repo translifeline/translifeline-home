@@ -7,7 +7,8 @@ block styles
   link(href='/styles/admin.css', rel='stylesheet')
 
 block content
-  h1='Admin'
+  section#title
+    h1='Admin'
   section#admin-donate
     h2='Donate'
     form
@@ -33,7 +34,7 @@ block content
           img(src=donate.img)
         input#image(type='file' accept='image/*')
         label Alt text
-        image#alt(type='text' value=donate && donate.alt ? donate.alt : '')
+        input#alt(type='text' value=donate && donate.alt ? donate.alt : '')
       section#submit-sections
         button#submit(type='submit') Save changes
   section#admin-banner

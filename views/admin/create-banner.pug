@@ -7,14 +7,15 @@ block styles
   link(href='/styles/admin.css', rel='stylesheet')
 
 block content
-  h1='Add Banner Image'
-  form#add-image
-    label Image (Recommended size: 1125x300)
-    input#image(type='file' accept='image/*')
-    label Link
-    input#link(type='text')
-    label Alt text
-    input#alt(type='text')
-    label Background Color
-    input#bg(type='color' value='#242424')
-    button#submit(type='submit') Add to banner
+  section#add-banner-image
+    h1='Add Banner Image'
+    form#add-image
+      label Image (Recommended size: 1125x300)
+      input#image(type='file' accept='image/*')
+      label Link
+      input#link(type='text')
+      label Alt text
+      input#alt(type='text')
+      label Background Color
+      input#bg(type='color' value='#242424')
+      button#submit(type='submit') Add to banner
