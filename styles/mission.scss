@@ -1,0 +1,7 @@
+@import "_variables.scss";
+
+@include susy-breakpoint($narrow, $narrowLayout) {
+  #content img {
+    width: 100%;
+  }
+}

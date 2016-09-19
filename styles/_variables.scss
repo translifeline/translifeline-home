@@ -22,12 +22,13 @@ $background-color: #ffffff;
 $darker-primary-color: darken($primary-color, 5%);
 
 // Dimensions
-$header-height: 50px;
+$header-height: 60px;
 $footer-height: 150px;
 $vertical-spacer: 20px;
 $horizontal-spacer: 20px;
 $menu-width: 250px;
 $banner-height: 300px;
+$mobile-banner-height: 110px;
 
 //Media queries.
 $wide: 620px;

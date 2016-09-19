@@ -2,7 +2,6 @@
 
 header {
   height: $header-height;
-  padding: 5px 0;
   background-color: $background-color;
 
   .logo {
@@ -79,6 +78,16 @@ header {
     .submenu-collapsed {
       max-height: 0px;
     }
+  }
+
+  @include susy-breakpoint($wide, $wideLayout) {
+    @include span(12);
+    padding-top: 5px;
+  }
+
+  @include susy-breakpoint($narrow, $narrowLayout) {
+    @include span(1);
+    padding: 5px 0;
   }
 }
 

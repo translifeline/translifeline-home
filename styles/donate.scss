@@ -1,62 +1,76 @@
 @import "_variables.scss";
 
-#donate {
-  #progress {
-   width: 100%;
-   height: 35px;
-   background-color: #9f9f9f;
-   position: relative;
-   border-radius: 10px;
+#progress {
+ width: 100%;
+ height: 35px;
+ background-color: #9f9f9f;
+ position: relative;
+ border-radius: 10px;
+}
+
+#bar {
+ height: 35px;
+ background-color: #503164;
+ width: 2%;
+ min-width: 2%;
+ border-radius: 10px;
+}
+
+h2 {
+  color: #b13fb4;
+}
+
+#button {
+  display: block;
+  color: white;
+  background-color: $primary-color;
+  padding: 20px 40px;
+  margin: $vertical-spacer auto;
+  width: 250px;
+  border: 0 none;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+#dd-container {
+  font-size: 0.8em;
+  margin-top: 40px;
+}
+
+@include susy-breakpoint($wide, $wideLayout) {
+  .title-mobile {
+    display: none;
   }
 
-  #bar {
-   height: 35px;
-   background-color: #503164;
-   width: 2%;
-   min-width: 2%;
-   border-radius: 10px;
+  section {
+    @include span(5);
   }
 
-  h2 {
-    color: #b13fb4;
+  .push {
+    @include push(1);
+  }
+}
+
+@include susy-breakpoint($narrow, $narrowLayout) {
+  .title-mobile {
+    @include span(1);
   }
 
-  #button {
-    display: block;
-    color: white;
-    background-color: $primary-color;
-    padding: 20px 40px;
-    margin: $vertical-spacer auto;
-    width: 250px;
-    border: 0 none;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    font-size: 1.3em;
-    text-align: center;
+  .title {
+    display: none;
   }
 
-  a {
-    text-decoration: none;
+  section {
+    @include span(1);
   }
 
-  #dd-container {
-    font-size: 0.8em;
-    margin-top: 40px;
-  }
-
-  @include susy-breakpoint($wide, $wideLayout) {
-    section {
-      @include span(5);
-    }
-
-    section:first-child {
-      @include push(1);
-    }
-  }
-
-  @include susy-breakpoint($narrow, $narrowLayout) {
-    section {
-      @include span(1);
-    }
+  #content img {
+    width: 100%;
   }
 }

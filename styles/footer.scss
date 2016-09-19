@@ -3,7 +3,7 @@
 footer {
   background-color: $primary-color;
   margin-top: $vertical-spacer;
-  height: $footer-height;
+  min-height: $footer-height;
   padding-top: $vertical-spacer;
 
   @if (lightness($primary-color) > 50) {
@@ -16,5 +16,13 @@ footer {
     margin-right: $horizontal-spacer;
     display: inline;
     text-align: right;
+  }
+
+  @include susy-breakpoint($wide, $wideLayout) {
+    @include span(12);
+  }
+
+  @include susy-breakpoint($narrow, $narrowLayout) {
+    @include span(1);
   }
 }

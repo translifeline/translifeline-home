@@ -3,7 +3,11 @@
 @import "node_modules/node-normalize-scss/_normalize.scss";
 
 @import "_variables.scss";
-@import "_imports.scss";
+@import "header.scss";
+@import "sidebar.scss";
+@import "banner.scss";
+@import "footer.scss";
+@import "social.scss";
 
 html,body {
   font-family: "Raleway";
@@ -33,15 +37,9 @@ a:hover {
   position: relative;
 }
 
-
 #content {
   font-size: 1.5em;
-  margin: 0 $horizontal-spacer;
   padding-bottom: 2*$vertical-spacer;
-}
-
-.sidebar {
-  margin: 0 $horizontal-spacer;
 }
 
 .center {
@@ -54,22 +52,17 @@ a:hover {
     @include span(8);
   }
 
-  .sidebar {
-    @include span(3);
-    float: right;
+  #content {
+    margin: 0 $horizontal-spacer;
   }
 
-  footer {
-    @include span(12);
+  .sidebar {
+    margin: 0 $horizontal-spacer;
   }
 }
 
 @include susy-breakpoint($narrow, $narrowLayout) {
   #content.has-sidebar {
-    @include span(1);
-  }
-
-  .sidebar {
     @include span(1);
   }
 }

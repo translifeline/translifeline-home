@@ -16,6 +16,8 @@ function banner($) {
     },
     5000
   );
+
+  $('.banner').height($('.banner img').height());
 }
 
 module.exports = banner;

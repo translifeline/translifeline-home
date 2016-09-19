@@ -13,7 +13,6 @@ h1 a {
     background-color: $primary-color;
     padding: 20px 40px;
     margin: $vertical-spacer auto;
-    width: 250px;
     border: 0 none;
     -webkit-border-radius: 5px;
     border-radius: 5px;
@@ -29,7 +28,7 @@ h1 a {
 
 .bottom-shadow {
   padding-bottom: $vertical-spacer;
-  box-shadow: 0 1px 0 $secondary-color;
+  box-shadow: 0 2px 2px -2px $secondary-color;
 }
 
 .about {
@@ -41,6 +40,10 @@ h1 a {
 @include susy-breakpoint($wide, $wideLayout) {
   .about {
     @include span(6);
+  }
+
+  .donate-ask a {
+    width: 250px;
   }
 }
 
