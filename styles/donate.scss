@@ -55,6 +55,10 @@ a {
   .push {
     @include push(1);
   }
+
+  #content img {
+    max-width: 100%;
+  }
 }
 
 @include susy-breakpoint($narrow, $narrowLayout) {

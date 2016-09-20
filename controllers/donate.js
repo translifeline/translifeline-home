@@ -4,7 +4,7 @@ const menu = require('./common/menu');
 const donate = require('./common/donate');
 const request = require('request');
 
-/* A controller for the home page. */
+/* A controller for the donate page. */
 function controller(app) {
   app.get('/donate', function (req, res) {
     donate(app).then(function(donate) {
