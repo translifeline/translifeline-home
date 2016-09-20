@@ -38,6 +38,11 @@ a:hover {
   display: block;
 }
 
+.bottom-shadow {
+  padding-bottom: $vertical-spacer;
+  box-shadow: 0 2px 2px -2px $secondary-color;
+}
+
 @include susy-breakpoint($wide, $wideLayout) {
   #content.has-sidebar {
     @include span(8);

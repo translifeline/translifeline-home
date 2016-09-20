@@ -1,0 +1,16 @@
+@import "_variables.scss";
+
+ul.checklist {
+  list-style-type: none;
+}
+
+section {
+  @include susy-breakpoint($wide, $wideLayout) {
+    @include span(12);
+  }
+
+  @include susy-breakpoint($narrow, $narrowLayout) {
+    @include span(1);
+    padding: 0;
+  }
+}
