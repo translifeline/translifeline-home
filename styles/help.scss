@@ -13,19 +13,12 @@
     section {
       @include span(12);
     }
-
-    .img {
-      @include span(3);
-    }
-
-    .text {
-      @include span(9);
-    }
   }
 
   @include susy-breakpoint($narrow, $narrowLayout) {
     section, .img, .text {
       @include span(1);
+      padding: 0;
     }
   }
 
