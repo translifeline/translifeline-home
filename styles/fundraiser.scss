@@ -1,0 +1,33 @@
+@import "_variables.scss";
+
+section {
+  ol {
+    list-style-type: none;
+
+    li {
+      padding: $vertical-spacer $horizontal-spacer;
+    }
+
+    li.invert {
+      background-color: $primary-color;
+      color: white;
+
+      a {
+        color: white;
+      }
+    }
+  }
+
+  @include susy-breakpoint($wide, $wideLayout) {
+    @include span(12);
+  }
+
+  @include susy-breakpoint($narrow, $narrowLayout) {
+    @include span(1);
+    padding: 0;
+
+    ol {
+      padding: 0;
+    }
+  }
+}
