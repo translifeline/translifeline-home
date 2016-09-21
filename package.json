@@ -2,6 +2,7 @@
   "name": "translifeline-home",
   "version": "1.0.0",
   "description": "Trans Lifeline's public facing page",
+  "homepage": "https://www.translifeline.org",
   "engines": {
     "node": ">=6.0.0",
     "npm": ">=3.10.3"
@@ -17,8 +18,12 @@
     "start-dev": "export NODE_ENV=development && export MONGODB_URI=mongodb://localhost:27017/translifeline-home && parallelshell 'npm run sass-watch' 'npm run browserify-watch' 'nodemon app.js'"
   },
   "private": true,
-  "author": "Nina Chaubal",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TransLifeline/translifeline-home"
+  },
+  "bugs": "https://github.com/TransLifeline/translifeline-home/issues",
   "dependencies": {
     "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
