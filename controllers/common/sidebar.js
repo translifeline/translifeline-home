@@ -8,13 +8,13 @@ function controller(app) {
     mc = new mcapi.Mailchimp(process.env.MAILCHIMP_KEY);
     mc.lists.list(function(data) {
       let lists = data.data;
-      let surveyList = lists.find(function(list) {
-        return list.name === 'All Supporters'
+      let subscriptionList = lists.find(function(list) {
+        return list.name === process.env.MAILCHIMP_LIST_NAME
       });
-      if (!surveyList) {
+      if (!subscriptionList) {
         console.log('List not found.');
       }
-      listId = surveyList.id;
+      listId = subscriptionList.id;
     });
   } else {
     console.log('MAILCHIMP_KEY not set.');
