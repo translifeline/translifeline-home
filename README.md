@@ -22,7 +22,7 @@ $> npm install
 
 ###4. Start.
 ```
-#> npm start
+$> npm start
 ```
 You can also start the app in developer mode to watch for changes and livereload.
 
