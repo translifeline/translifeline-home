@@ -14,12 +14,14 @@
   li {
     width: 100%;
     position: absolute;
-    left: -100%;
-    top: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: opacity 2s ease-in-out;
+    transition: opacity 2s ease-in-out;
   }
 
   .active {
-    left:0;
+    opacity: 1;
   }
 }
 
