@@ -39,6 +39,7 @@ header {
     margin-top: -5px;
     padding-top: 5px;
     right: -1 * $menu-width;
+    -webkit-transition: right 1s ease-in-out;
     transition: right 1s ease-in-out;
     z-index: 2;
     // Color scheme is inverse of that of the rest of the page.
@@ -65,6 +66,7 @@ header {
     .submenu {
       list-style: none;
       padding: 0;
+      -webkit-transition: max-height 1s ease-in-out;
       transition: max-height 1s ease-in-out;
       max-height: 500px;
       overflow: hidden;
