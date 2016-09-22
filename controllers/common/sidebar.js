@@ -2,24 +2,6 @@
 
 /* A controller for the sidebar. */
 function controller(app) {
-  let mc, listId;
-  if(process.env.MAILCHIMP_KEY) {
-    const mcapi = require('mailchimp-api/mailchimp');
-    mc = new mcapi.Mailchimp(process.env.MAILCHIMP_KEY);
-    mc.lists.list(function(data) {
-      let lists = data.data;
-      let subscriptionList = lists.find(function(list) {
-        return list.name === process.env.MAILCHIMP_LIST_NAME
-      });
-      if (!subscriptionList) {
-        console.log('List not found.');
-      }
-      listId = subscriptionList.id;
-    });
-  } else {
-    console.log('MAILCHIMP_KEY not set.');
-  }
-
   app.post('/subscribe', function(req, res) {
     if (!req.body || !req.body.email) {
       res.status(400).end();
@@ -34,8 +16,11 @@ function controller(app) {
       merge['LNAME'] = req.body.last;
     }
 
-    if(mc) {
-      mc.lists.subscribe({id: listId, email:{email: email}, merge_vars: merge}, function() {
+    if(process.env.MAILCHIMP_KEY || process.env.MAILCHIMP_LIST_ID) {
+      const mcapi = require('mailchimp-api/mailchimp');
+      let mc = new mcapi.Mailchimp(process.env.MAILCHIMP_KEY);
+
+      mc.lists.subscribe({id: process.env.MAILCHIMP_LIST_ID, email:{email: email}, merge_vars: merge}, function() {
         res.status(200).end();
       },
       function(err) {
@@ -43,7 +28,7 @@ function controller(app) {
         res.status(500).end();
       });
     } else {
-      console.log('To be added to list: ' + merge);
+      console.log('MAILCHIMP_KEY or MAILCHIMP_LIST_ID not set.');
     }
   });
 }

@@ -12,7 +12,7 @@ $> git clone https://github.com/TransLifeline/translifeline-home.git
 ###2. Set environment variables.
 Set MONGODB_URI to your MongoDb connnection url.
 
-For email subscriptions, set MAILCHIMP_KEY to your mailchimp key and MAILCHIMP_LIST_NAME to the name of the email list.
+For email subscriptions, set MAILCHIMP_KEY to your mailchimp key and MAILCHIMP_LIST_ID to the id of the mailchimp email list.
 
 For fundraising campaign progress, set MOONCLERK_TOKEN
 ###3. Install dependencies.
