@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 // Initialize database.
 MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
   if (err) {
-    console.log(error);
+    console.log(err);
   } else {
     app.set('database', db);
 
