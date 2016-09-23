@@ -31,11 +31,15 @@ function getCampaignProgressData(donate) {
         if (matchedAmount > donate.matchMax) {
           matchedAmount = donate.matchMax;
         }
+        let currentTime = new Date().getTime();
+        let endTime = new Date(donate.end).getTime();
+        let daysLeft = Math.floor((endTime - currentTime)/1000/60/60/24)
         resolve({
           goal: formatValue(donate.goal),
           amountRaised: formatValue(amountRaised),
           matchedAmount: formatValue(matchedAmount),
-          percent: amountRaised * 100 / donate.goal
+          percent: amountRaised * 100 / donate.goal,
+          daysLeft: daysLeft
         });
       }, function(error) {
         reject(error);
