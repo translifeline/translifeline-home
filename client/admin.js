@@ -6,37 +6,45 @@ const imageDataUrl = require('./image-data-url');
 JS needed by admin features.
 */
 function admin($) {
+  var image = $('#admin-donate #image-preview').attr('src');
+
+  // Update donate image preview.
+  $('#admin-donate #image').change(function(event) {
+    var file = $('#admin-donate #image').get(0).files[0];
+    imageDataUrl(file, 600, 800, function(img) {
+      $('#admin-donate #image-preview').attr('src', img);
+      image = img;
+    });
+  });
+
   // Donate data.
   $('#admin-donate #submit').click(function(event) {
     event.preventDefault();
     var title = $('#admin-donate #title').val();
     var text = $('#admin-donate #text').val();
-    var file = $('#admin-donate #image').get(0).files[0];
     var alt = $('#admin-donate #alt').val();
     var goal = $('#admin-donate #goal').val();
     var start = $('#admin-donate #start').val();
     var end = $('#admin-donate #end').val();
     var matchMultiplier = $('#admin-donate #match-multiplier').val();
     var matchMax = $('#admin-donate #match-max').val();
-    imageDataUrl(file, 600, 800, function(img) {
-      $.ajax({
-        type: 'POST',
-        url: '/donate',
-        data: {
-          title: title,
-          text: text,
-          img: img,
-          alt: alt,
-          goal: goal,
-          start: start,
-          end: end,
-          matchMultiplier: matchMultiplier,
-          matchMax: matchMax
-        },
-        success: function() {
-          window.location =  '/admin';
-        }
-      });
+    $.ajax({
+      type: 'POST',
+      url: '/donate',
+      data: {
+        title: title,
+        text: text,
+        img: image,
+        alt: alt,
+        goal: goal,
+        start: start,
+        end: end,
+        matchMultiplier: matchMultiplier,
+        matchMax: matchMax
+      },
+      success: function() {
+        window.location =  '/donate';
+      }
     });
   });
 

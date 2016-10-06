@@ -31,7 +31,7 @@ block content
       section.form-section
         label Campaign Image
         if donate && donate.img
-          img(src=donate.img)
+          img#image-preview(src=donate.img)
         input#image(type='file' accept='image/*')
         label Alt text
         input#alt(type='text' value=donate && donate.alt ? donate.alt : '')

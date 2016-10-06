@@ -34,6 +34,9 @@ function getCampaignProgressData(donate) {
         let currentTime = new Date().getTime();
         let endTime = new Date(donate.end).getTime();
         let daysLeft = Math.floor((endTime - currentTime)/1000/60/60/24)
+        if (daysLeft < 0) {
+          daysLeft = 0;
+        }
         resolve({
           goal: formatValue(donate.goal),
           amountRaised: formatValue(amountRaised),

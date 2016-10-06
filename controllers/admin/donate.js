@@ -22,25 +22,12 @@ function controller(app) {
     let db = app.get('database');
 
     db.collection('donate').findOne({}).then(function(doc) {
-      if (doc) {
-        db.collection('donate').update({
-          _id: mongodb.ObjectId(doc._id)
-        }, {
-          $set: { data }
-        }).then(function() {
-          res.sendStatus(200);
-        }).catch(function(err) {
-          console.log(err);
-          res.sendStatus(500);
-        });
-      } else {
-        db.collection('donate').insertOne(data).then(function() {
-          res.sendStatus(200);
-        }).catch(function(err) {
-          console.log(err);
-          res.sendStatus(500);
-        });
-      }
+      db.collection('donate').update({}, data, {upsert: true}).then(function() {
+        res.sendStatus(200);
+      }).catch(function(err) {
+        console.log(err);
+        res.sendStatus(500);
+      });
     }).catch(function(err) {
       console.log(err);
       res.sendStatus(500);
