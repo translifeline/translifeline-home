@@ -20,8 +20,16 @@
     transition: opacity 2s ease-in-out;
   }
 
+  a {
+    display: none;
+  }
+
   .active {
     opacity: 1;
+
+    a {
+      display: block;
+    }
   }
 }
 
@@ -33,7 +41,6 @@
     height: $banner-height;
 
     a {
-      display: block;
       height: $banner-height;
       margin: 0 auto;
       width: 1125px;
@@ -50,10 +57,6 @@
     @include span(1);
     padding: 0;
     height: $mobile-banner-height;
-
-    a {
-      display: block;
-    }
 
     img {
       max-width: 100%;
