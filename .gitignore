@@ -3,3 +3,4 @@ data
 public/styles/*.css
 public/js/*.js
 *.log
+.DS_Store
