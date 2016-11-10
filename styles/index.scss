@@ -28,18 +28,7 @@ section {
   }
 }
 
-.about {
-  img {
-    width: 100%;
-    height: 350px;
-  }
-}
-
 @include susy-breakpoint($wide, $wideLayout) {
-  .about {
-    @include span(6);
-  }
-
   .donate-ask a {
     width: 250px;
   }
@@ -47,7 +36,10 @@ section {
 
 @include susy-breakpoint($narrow, $narrowLayout) {
   .about {
-    @include span(1);
-    padding: 0;
+    img {
+      @include span(1);
+      padding: 0;
+      margin-bottom: $vertical-spacer;
+    }
   }
 }
