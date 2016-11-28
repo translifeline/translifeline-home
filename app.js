@@ -62,6 +62,10 @@ MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
 app.use(passport.initialize());
 // Initialize controllers.
 controllers(app);
+// Let's Encrypt.
+app.get('/.well-known/acme-challenge/:challenge', function(req, res) {
+  res.send(process.env.LETSENCRYPT_TOKEN);
+});
 
 // Start the server.
 const port = process.env.PORT || 3000;
