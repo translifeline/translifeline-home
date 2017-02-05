@@ -6,6 +6,7 @@
  background-color: #9f9f9f;
  position: relative;
  border-radius: 10px;
+ overflow: hidden;
 }
 
 #bar {
@@ -41,6 +42,10 @@ a {
 #dd-container {
   font-size: 0.8em;
   margin-top: 40px;
+}
+
+.days[data-days="0"] {
+  display: none;
 }
 
 @include susy-breakpoint($wide, $wideLayout) {

@@ -20,7 +20,7 @@ block content
       if progress.percent > 0
         div#bar(style='width:' + progress.percent + '%')
     h3.
-      #{Math.round(progress.percent)}% Raised of $#{progress.goal} Goal with #{progress.daysLeft} days to go.
+      #{Math.round(progress.percent)}% Raised of $#{progress.goal} Goal#[span.days(data-days=progress.daysLeft) with #{progress.daysLeft} Days to go].
     if progress.matchedAmount > 0
       h3.
         $#{progress.matchedAmount} matched.
