@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const compression = require('compression')
 const favicon = require('serve-favicon');
 const controllers = require('./controllers');
 const moonclerk = require('./moonclerk');
@@ -12,6 +13,7 @@ const bcrypt = require('bcrypt');
 const morgan = require('morgan')
 
 const app = express();
+app.use(compression());
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 if (process.env.NODE_ENV === 'development') {

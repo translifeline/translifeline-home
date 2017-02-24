@@ -28,6 +28,7 @@
     "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
     "browserify": "^13.1.0",
+    "compression": "^1.6.2",
     "express": "^4.14.0",
     "font-awesome": "^4.6.3",
     "jquery-browserify": "^1.8.1",
