@@ -15,15 +15,15 @@ block content
     h1.title=donate.title
     if donate.text
       p=donate.text
-    h2='$' + progress.amountRaised
+    h2='$' + donate.progress.amountRaised
     div#progress
-      if progress.percent > 0
-        div#bar(style='width:' + progress.percent + '%')
+      if donate.progress.percent > 0
+        div#bar(style='width:' + donate.progress.percent + '%')
     h3.
-      #{Math.round(progress.percent)}% Raised of $#{progress.goal} Goal#[span.days(data-days=progress.daysLeft)  with #{progress.daysLeft} Days to go].
-    if progress.matchedAmount > 0
+      #{Math.round(donate.progress.percent)}% Raised of $#{donate.progress.goal} Goal#[span.days(data-days=donate.progress.daysLeft)  with #{donate.progress.daysLeft} Days to go].
+    if donate.progress.matchedAmount > 0
       h3.
-        $#{progress.matchedAmount} matched.
+        $#{donate.progress.matchedAmount} matched.
     a#button(href='https://app.moonclerk.com/pay/4q0i3scndql') Give Today!
     script.
       var DDCONF = { API_KEY: "ODFlZjQwZGMtODBi" };
