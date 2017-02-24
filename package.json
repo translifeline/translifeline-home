@@ -9,7 +9,7 @@
   },
   "main": "app.js",
   "scripts": {
-    "browserify": "browserify client/main.js -o public/js/bundle.js",
+    "browserify": "browserify client/main.js | uglifyjs > public/js/bundle.js",
     "sass": "node-sass styles/ -o public/styles/",
     "prestart": "npm run sass && npm run browserify",
     "start": "node app.js",
@@ -44,7 +44,8 @@
     "pug": "^2.0.0-beta3",
     "request": "^2.74.0",
     "serve-favicon": "^2.3.0",
-    "susy": "^2.2.12"
+    "susy": "^2.2.12",
+    "uglify-js-harmony": "^2.7.5"
   },
   "devDependencies": {
     "express-livereload": "0.0.24",
