@@ -27,7 +27,7 @@ block content
     a#button(href='https://app.moonclerk.com/pay/4q0i3scndql') Give Today!
     script.
       var DDCONF = { API_KEY: "ODFlZjQwZGMtODBi" };
-    script(src='https://doublethedonation.com/api/js/ddplugin.js')
+    script(src='https://doublethedonation.com/api/js/ddplugin.js' async)
     link(href='https://doublethedonation.com/api/css/ddplugin.css', rel='stylesheet')
     #dd-container.well
         div(ng-include='search_template')
