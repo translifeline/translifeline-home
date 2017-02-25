@@ -10,7 +10,8 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const BasicStrategy = require('passport-http').BasicStrategy;
 const bcrypt = require('bcrypt');
-const morgan = require('morgan')
+const morgan = require('morgan');
+const fs = require('fs');
 
 const app = express();
 app.use(compression());
@@ -73,7 +74,17 @@ app.get('/.well-known/acme-challenge/:challenge', function(req, res) {
 });
 
 // Start the server.
-const port = process.env.PORT || 3000;
+let port = process.env.PORT || 3000;
+if (process.env.DYNO) {
+  // Running on Heroku. Listen to the socket used by nginx.
+  port = "/tmp/nginx.socket"
+}
+
 app.listen(port, function () {
+  if (process.env.DYNO) {
+    // This process is running on heroku. Touch /tmp/app-initialized to Let
+    // our nginx instance know we are ready.
+    fs.openSync('/tmp/app-initialized', 'w');
+  }
   console.log('App listening on port ' + port);
 });
