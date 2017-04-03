@@ -67,7 +67,7 @@ app.use(passport.initialize());
 // Initialize controllers.
 controllers(app);
 // Initialize moonclerk helper.
-moonclerk(app);
+//moonclerk(app);
 // Let's Encrypt.
 app.get('/.well-known/acme-challenge/:challenge', function(req, res) {
   res.send(process.env.LETSENCRYPT_TOKEN);
