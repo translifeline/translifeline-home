@@ -12,6 +12,7 @@ const bcrypt = require('bcrypt');
 const morgan = require('morgan');
 const fs = require('fs');
 const helmet = require('helmet');
+const stripe = require('./stripe');
 
 const app = express();
 app.use(compression());
@@ -58,6 +59,8 @@ MongoClient.connect(process.env.MONGODB_URI, function(err, db) {
 });
 // Initialize passport.
 app.use(passport.initialize());
+// Initialize stripe.
+stripe(app);
 // Initialize controllers.
 controllers(app);
 // Let's Encrypt.

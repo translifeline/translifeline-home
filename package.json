@@ -45,6 +45,7 @@
     "pug": "^2.0.0-beta3",
     "request": "^2.74.0",
     "serve-favicon": "^2.3.0",
+    "stripe": "^4.17.1",
     "susy": "^2.2.12",
     "uglify-js-harmony": "^2.7.5"
   },
