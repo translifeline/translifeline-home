@@ -12,9 +12,11 @@ const BasicStrategy = require('passport-http').BasicStrategy;
 const bcrypt = require('bcrypt');
 const morgan = require('morgan');
 const fs = require('fs');
+const helmet = require('helmet');
 
 const app = express();
 app.use(compression());
+app.use(helmet());
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 if (process.env.NODE_ENV === 'development') {
