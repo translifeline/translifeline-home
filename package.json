@@ -49,7 +49,6 @@
     "uglify-js-harmony": "^2.7.5"
   },
   "devDependencies": {
-    "express-livereload": "0.0.24",
     "nodemon": "^1.9.2",
     "parallelshell": "^2.0.0",
     "watchify": "^3.7.0"

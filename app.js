@@ -19,13 +19,6 @@ app.use(compression());
 app.use(helmet());
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
-if (process.env.NODE_ENV === 'development') {
-  const livereload = require('express-livereload');
-  livereload(app, {
-    watchDir: process.cwd()
-  });
-}
-
 // Morgan for logging.
 app.use(morgan('common'))
 // Set view engine.
