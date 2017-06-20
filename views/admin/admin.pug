@@ -32,7 +32,7 @@ block content
         label Campaign Image
         if donate && donate.img
           img#image-preview(src=donate.img)
-        input#image(type='file' accept='image/*')
+        input#image(type='text' value=donate.img)
         label Alt text
         input#alt(type='text' value=donate && donate.alt ? donate.alt : '')
       section#submit-sections

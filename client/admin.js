@@ -8,18 +8,10 @@ JS needed by admin features.
 function admin($) {
   var image = $('#admin-donate #image-preview').attr('src');
 
-  // Update donate image preview.
-  $('#admin-donate #image').change(function(event) {
-    var file = $('#admin-donate #image').get(0).files[0];
-    imageDataUrl(file, 600, 800, function(img) {
-      $('#admin-donate #image-preview').attr('src', img);
-      image = img;
-    });
-  });
-
   // Donate data.
   $('#admin-donate #submit').click(function(event) {
     event.preventDefault();
+    var image = $('#admin-donate #image').val();
     var title = $('#admin-donate #title').val();
     var text = $('#admin-donate #text').val();
     var alt = $('#admin-donate #alt').val();
@@ -51,20 +43,16 @@ function admin($) {
   // Add banner image.
   $('#add-image #submit').click(function(event) {
     event.preventDefault();
-    var file = $('#add-image #image').get(0).files[0];
     var link = $('#add-image #link').val();
     var alt = $('#add-image #alt').val();
     var bg = $('#add-image #bg').val();
-    imageDataUrl(file, 1125, 300, function(img) {
-      if(img) {
-        $.ajax({
-          type: 'POST',
-          url: '/banner',
-          data: { img: img, alt: alt, link: link, bg: bg },
-          success: function() {
-            window.location =  '/admin'
-          }
-        });
+    var img = $('#add-image #image').val();
+    $.ajax({
+      type: 'POST',
+      url: '/banner',
+      data: { img: img, alt: alt, link: link, bg: bg },
+      success: function() {
+        window.location =  '/admin'
       }
     });
   });
