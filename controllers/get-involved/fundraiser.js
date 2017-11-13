@@ -9,7 +9,7 @@ function controller(app) {
     banner(app).then(function(banner) {
       let data = {
         menu: menu(),
-        showBanner: true,
+        showBanner: false,
         banner: banner,
         showSidebar: true
       };
