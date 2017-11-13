@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "Trans Lifeline's public facing page",
   "homepage": "https://www.translifeline.org",
-  "engines": {
-    "node": ">=6.0.0",
-    "npm": ">=3.10.3"
-  },
   "main": "app.js",
   "scripts": {
     "browserify": "browserify client/main.js | uglifyjs > public/js/bundle.js",
