@@ -5,17 +5,13 @@ footer {
   margin-top: $vertical-spacer;
   min-height: $footer-height;
   padding-top: $vertical-spacer;
-
-  @if (lightness($primary-color) > 50) {
-    color: black; // Lighter backgorund, return dark color
-  } @else {
-    color: white; // Darker background, return light color
-  }
+  color: $background-color;
 
   p {
     margin-right: $horizontal-spacer;
     display: inline;
     text-align: right;
+    color: $background-color;
   }
 
   @include susy-breakpoint($wide, $wideLayout) {

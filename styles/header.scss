@@ -2,7 +2,7 @@
 
 header {
   height: $header-height;
-  background-color: $background-color;
+  background-color: $secondary-color;
 
   .logo {
     display: block;
@@ -24,7 +24,7 @@ header {
   }
 
   #menu-button {
-    color: $primary-color;
+    color: $background-color;
   }
 
   nav.expanded {
