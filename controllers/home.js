@@ -9,8 +9,12 @@ function controller(app) {
     banner(app).then(function(banner) {
       let data = {
         menu: menu(),
-        showBanner: false,
-        banner: banner,
+        showBanner: true,
+        banner: [{
+            img: 'images/givingtuesday.png',
+            alt: 'Fight for Trans Lives on #GivingTuesday!',
+            link: '/donate'
+        }],
         showSidebar: true
       };
       res.render('index', data);

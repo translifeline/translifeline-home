@@ -30,10 +30,12 @@ html
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
   body
+    include ./header.pug
     div#container
-      include ./header.pug
+      if showBanner
+        include ./banner.pug
       div#content(class=showSidebar ? 'has-sidebar' : '')
         block content
       if showSidebar
         include ./sidebar.pug
-      include ./footer.pug
+    include ./footer.pug

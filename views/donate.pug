@@ -9,8 +9,6 @@ block styles
 block content
   div.title-mobile
     h1=donate.title
-  section.push
-    img(src=donate.img alt=donate.alt)
   section
     h1.title=donate.title
     if donate.text
@@ -24,7 +22,9 @@ block content
     if donate.progress.matchedAmount > 0
       h3.
         $#{donate.progress.matchedAmount} matched.
-    a#button(href='https://app.moonclerk.com/pay/4q0i3scndql') Give Today!
+    div(id="mc4q0i3scndql")
+    script.
+        var mc4q0i3scndql;(function(d,t) {var s=d.createElement(t),opts={"checkoutToken":"4q0i3scndql","width":"100%"};s.src='https://d2l7e0y6ygya2s.cloudfront.net/assets/embed.js';s.onload=s.onreadystatechange = function() {var rs=this.readyState;if(rs) if(rs!='complete') if(rs!='loaded') return;try {mc4q0i3scndql=new MoonclerkEmbed(opts);mc4q0i3scndql.display();} catch(e){}};var scr=d.getElementsByTagName(t)[0];scr.parentNode.insertBefore(s,scr);})(document,'script');
     script.
       var DDCONF = { API_KEY: "ODFlZjQwZGMtODBi" };
     script(src='https://doublethedonation.com/api/js/ddplugin.js' async)

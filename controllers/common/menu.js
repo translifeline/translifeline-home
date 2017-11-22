@@ -9,7 +9,6 @@ function getMenuData() {
       new MenuItem('FAQ', '/faq'),
       new MenuItem('Contact', '/contact')
     ]),
-    new MenuItem('Survey', 'http://www.transmentalhealthsurvey.org'),
     new MenuItem('Get Involved', null, [
       new MenuItem('Ways to Help', '/help'),
       new MenuItem('Volunteer', 'https://jobs.lever.co/translifeline'),
@@ -19,9 +18,7 @@ function getMenuData() {
     new MenuItem('Resources', 'https://radremedy.org/'),
     new MenuItem('Donate', '/donate'),
     new MenuItem('Store', 'http://www.redbubble.com/people/translifeline/shop'),
-    new MenuItem('Statistics', 'https://app.gogrow.com/dashboard/share/4e9ce15374e302092626fc713c6c89ff'),
     new MenuItem('Blog', 'https://medium.com/@Translifeline'),
-    new MenuItem('Login', 'http://hotline.translifeline.org/login')
   ];
 }
 
