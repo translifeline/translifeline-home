@@ -40,7 +40,7 @@ header {
     padding-top: 5px;
     right: -1 * $menu-width;
     -webkit-transition: right 1s ease-in-out;
-    transition: right 1s ease-in-out;
+    transition: right 400ms ease-out;
     z-index: 2;
     // Color scheme is inverse of that of the rest of the page.
     background-color: $darker-primary-color;

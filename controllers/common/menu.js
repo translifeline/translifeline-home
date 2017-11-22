@@ -18,7 +18,7 @@ function getMenuData() {
     new MenuItem('Resources', 'https://radremedy.org/'),
     new MenuItem('Donate', '/donate'),
     new MenuItem('Store', 'http://www.redbubble.com/people/translifeline/shop'),
-    new MenuItem('Blog', 'https://medium.com/@Translifeline'),
+    new MenuItem('Blog', 'https://medium.com/@Translifeline')
   ];
 }
 
