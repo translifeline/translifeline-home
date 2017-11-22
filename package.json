@@ -1,0 +1,50 @@
+{
+  "name": "translifeline-home",
+  "version": "1.0.0",
+  "description": "Trans Lifeline's public facing page",
+  "homepage": "https://www.translifeline.org",
+  "main": "app.js",
+  "scripts": {
+    "browserify": "browserify client/main.js | uglifyjs > public/js/bundle.js",
+    "sass": "node-sass styles/ -o public/styles/ --output-style compressed",
+    "prestart": "npm run sass && npm run browserify",
+    "start": "node app.js",
+    "browserify-watch": "watchify client/main.js -o public/js/bundle.js -d",
+    "sass-watch": "node-sass -w styles/ -o public/styles/",
+    "start-dev": "export NODE_ENV=development && export MONGODB_URI=mongodb://localhost:27017/translifeline-home && parallelshell 'npm run sass-watch' 'npm run browserify-watch' 'nodemon app.js'"
+  },
+  "private": true,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TransLifeline/translifeline-home"
+  },
+  "bugs": "https://github.com/TransLifeline/translifeline-home/issues",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "browserify": "^13.1.0",
+    "compression": "^1.6.2",
+    "express": "^4.14.0",
+    "font-awesome": "^4.6.3",
+    "helmet": "^3.5.0",
+    "jquery-browserify": "^1.8.1",
+    "mailchimp-api": "^2.0.7",
+    "mongodb": "^2.2.5",
+    "morgan": "^1.7.0",
+    "node-normalize-scss": "^1.3.2",
+    "node-sass": "^3.8.0",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "prompt": "^1.0.0",
+    "pug": "^2.0.0-beta3",
+    "serve-favicon": "^2.3.0",
+    "susy": "^2.2.12",
+    "uglify-js-harmony": "^2.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2",
+    "parallelshell": "^2.0.0",
+    "watchify": "^3.7.0"
+  }
+}
