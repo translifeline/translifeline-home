@@ -3,6 +3,8 @@
 header {
   height: $header-height;
   background-color: $secondary-color;
+  position: relative;
+  z-index: 1;
 
   .logo {
     display: block;
