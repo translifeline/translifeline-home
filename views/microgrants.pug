@@ -1,0 +1,48 @@
+extends ./common/layout.pug
+
+block title
+  title Donate - Trans Lifeline
+
+block styles
+  link(href='/styles/donate.css', rel='stylesheet')
+
+block content
+  div.title-mobile
+    h1=donate.title
+  section
+    h1.title=donate.title
+    if donate.text
+      p=donate.text
+    p.
+      Trans Lifeline is coming together this holiday season to empower trans people who are incarcerated.
+      Accessing even the most basic goods and services can be near impossible while incarcerated; commissary goods are astronomically priced, and can be completely out of reach if the person inside has any unpaid legal fees attached to their account.
+      But there’s a catch.
+      In many prisons around the country, fees that are normally tacked onto commissary deposits are waived  on Christmas Day, and we want to take advantage of that. On December 25, we’re giving over $8,000 to incarcerated trans people all over the country.
+      But we can’t do it without your donations.
+      This holiday season, give hope. Let incarcerated trans people know that they’re not forgotten; people outside care about their welfare, and we’re rooting for them. All funds raised, even if we go way over our goal, will be used to fill the commissary accounts of incarcerated trans people.
+    h2='$' + donate.progress.amountRaised
+    div#progress
+      if donate.progress.percent > 0
+        div#bar(style='width:' + donate.progress.percent + '%')
+    h3.
+      #{Math.round(donate.progress.percent)}% Raised of $#{donate.goal} Goal#[span.days(data-days=donate.progress.daysLeft)  with #{donate.progress.daysLeft} Days to go].
+    if donate.progress.matchedAmount > 0
+      h3.
+        $#{donate.progress.matchedAmount} matched.
+    div(id="mc5zbpi52g8e0")
+    script.
+      var mc5zbpi52g8e0;(function(d,t) {var s=d.createElement(t),opts={"checkoutToken":"5zbpi52g8e0","width":"100%"};s.src='https://d2l7e0y6ygya2s.cloudfront.net/assets/embed.js';s.onload=s.onreadystatechange = function() {var rs=this.readyState;if(rs) if(rs!='complete') if(rs!='loaded') return;try {mc5zbpi52g8e0=new MoonclerkEmbed(opts);mc5zbpi52g8e0.display();} catch(e){}};var scr=d.getElementsByTagName(t)[0];scr.parentNode.insertBefore(s,scr);})(document,'script');
+    script.
+      var DDCONF = { API_KEY: "ODFlZjQwZGMtODBi" };
+    script(src='https://doublethedonation.com/api/js/ddplugin.js' async)
+    link(href='https://doublethedonation.com/api/css/ddplugin.css', rel='stylesheet')
+    #dd-container.well
+        div(ng-include='search_template')
+        p.
+          #[a(href='https://doublethedonation.com/matching-grant-resources/matching-gift-basics/') Matching Gift]
+          and
+          #[a(href='https://doublethedonation.com/matching-grant-resources/volunteer-grant-basics/') Volunteer Grant]
+          information provided by
+          #[br]
+        a(href='https://doublethedonation.com')
+          img(alt='Powered by Double the Donation', src='https://doublethedonation.com/api/img/powered-by.png')

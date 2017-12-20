@@ -4,6 +4,7 @@ const about = require('./about');
 const home = require('./home');
 const getInvolved = require('./get-involved');
 const donate = require('./donate');
+const microgrants = require('./microgrants');
 const admin = require('./admin');
 const sidebar = require('./common/sidebar');
 const elbe = require('./elbe');
@@ -16,6 +17,7 @@ function loadControllers(app) {
   about(app);
   getInvolved(app);
   donate(app);
+  microgrants(app);
   admin(app);
   sidebar(app);
   elbe(app);
