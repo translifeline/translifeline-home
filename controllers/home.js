@@ -9,7 +9,7 @@ function controller(app) {
     banner(app).then(function(banner) {
       let data = {
         menu: menu(),
-        showBanner: true,
+        showBanner: false,
         banner: [{
             img: 'images/givingtuesday.png',
             alt: 'Fight for Trans Lives on #GivingTuesday!',
