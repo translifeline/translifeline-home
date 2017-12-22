@@ -16,7 +16,22 @@ class Stripe {
       ).then((result) => {
         res.sendStatus(200);
       });
-    })
+    });
+    app.post('/stripe/microgrants-charge', (req, res) => {
+      let charge = req.body.data.object;
+      let db = app.get('database');
+      db.collection('microgrants-charges').update(
+        { stripe_id: charge.id },
+        {
+          stripe_id: charge.id,
+          created: charge.created,
+          amount: charge.amount - charge.amount_refunded
+        },
+        {upsert: true}
+      ).then((result) => {
+        res.sendStatus(200);
+      });
+    });
   }
 }
 
