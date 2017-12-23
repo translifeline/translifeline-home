@@ -11,7 +11,7 @@ function controller(app) {
   app.get('/admin', passport.authenticate('basic', { session: false }), function (req, res) {
     banner(app).then(function(banner) {
       donate(app).then(function(donate) {
-        microgrants(app).then(function(donate) {
+        microgrants(app).then(function(microgrants) {
           let data = {
             menu: menu(),
             showBanner: false,
