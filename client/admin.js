@@ -40,6 +40,38 @@ function admin($) {
     });
   });
 
+  // Microgrants data.
+  $('#admin-microgrants #mg-submit').click(function(event) {
+    event.preventDefault();
+    var image = $('#admin-microgrants #mg-image').val();
+    var title = $('#admin-microgrants #mg-title').val();
+    var text = $('#admin-microgrants #mg-text').val();
+    var alt = $('#admin-microgrants #mg-alt').val();
+    var goal = $('#admin-microgrants #mg-goal').val();
+    var start = $('#admin-microgrants #mg-start').val();
+    var end = $('#admin-microgrants #mg-end').val();
+    var matchMultiplier = $('#admin-microgrants #mg-match-multiplier').val();
+    var matchMax = $('#admin-microgrants #mg-match-max').val();
+    $.ajax({
+      type: 'POST',
+      url: '/microgrants',
+      data: {
+        title: title,
+        text: text,
+        img: image,
+        alt: alt,
+        goal: goal,
+        start: start,
+        end: end,
+        matchMultiplier: matchMultiplier,
+        matchMax: matchMax
+      },
+      success: function() {
+        window.location =  '/microgrants';
+      }
+    });
+  });
+
   // Add banner image.
   $('#add-image #submit').click(function(event) {
     event.preventDefault();

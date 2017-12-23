@@ -1,6 +1,6 @@
 @import "_variables.scss";
 
-#admin-donate, #admin-banner, #add-image {
+#admin-donate, #admin-microgrants, #admin-banner, #add-image {
   label, input {
     display: block;
     width: 100%;
@@ -14,7 +14,7 @@
   }
 }
 
-#admin-donate, #add-image {
+#admin-donate, #admin-microgrants, #add-image {
   #submit {
     font-size: 0.8em;
     background-color: $primary-color;
@@ -37,7 +37,7 @@
     max-height: 275px;
   }
 
-  #submit-section {
+  .submit-section {
     margin-top: $vertical-spacer;
   }
 
@@ -63,14 +63,14 @@
     @include span(12);
   }
 
-  #admin-donate {
+  #admin-donate, #admin-microgrants {
     @include span(12);
 
     .form-section {
       @include span(4);
     }
 
-    #submit-section {
+    .submit-section {
       @include span(12);
     }
   }
