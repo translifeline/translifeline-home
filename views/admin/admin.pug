@@ -42,27 +42,27 @@ block content
       form
         section.form-section
           label Campaign Title
-          input#mg-title(type='text' value=donate && donate.title ? donate.title : '')
+          input#mg-title(type='text' value=microgrants && microgrants.title ? microgrants.title : '')
           label Text
-          textarea#mg-text(value=donate && donate.text ? donate.text : '' rows='10')
+          textarea#mg-text(value=microgrants && microgrants.text ? microgrants.text : '' rows='10')
         section.form-section
           label Goal Amount
-          input#mg-goal(type='text' value=donate && donate.goal ? donate.goal: '')
+          input#mg-goal(type='text' value=microgrants && microgrants.goal ? microgrants.goal: '')
           label Start Date
-          input#mg-start(type='date' value=donate && donate.start ? donate.start : new Date().toJSON().slice(0,10))
+          input#mg-start(type='date' value=microgrants && microgrants.start ? microgrants.start : new Date().toJSON().slice(0,10))
           label End Date
-          input#mg-end(type='date' value=donate && donate.end ? donate.end : new Date().toJSON().slice(0,10))
+          input#mg-end(type='date' value=microgrants && microgrants.end ? microgrants.end : new Date().toJSON().slice(0,10))
           label Match Multiplier. Set to 0 if we don't have a match.
-          input#mg-match-multiplier(type='text' value=donate && donate.match-multiplier ? donate.match-multiplier : '0')
+          input#mg-match-multiplier(type='text' value=microgrants && microgrants.match-multiplier ? microgrants.match-multiplier : '0')
           label Maximum Match Amount
-          input#mg-match-max(type='text' value=donate && donate.match-max ? donate.match-max : '0')
+          input#mg-match-max(type='text' value=microgrants && microgrants.match-max ? microgrants.match-max : '0')
         section.form-section
           label Campaign Image
           if donate && donate.img
-            img#mg-image-preview(src=donate.img)
-          input#mg-image(type='text' value=donate.img)
+            img#mg-image-preview(src=microgrants.img)
+          input#mg-image(type='text' value=microgrants.img)
           label Alt text
-          input#mg-alt(type='text' value=donate && donate.alt ? donate.alt : '')
+          input#mg-alt(type='text' value=microgrants && microgrants.alt ? microgrants.alt : '')
         section.submit-section
           button#mg-submit(type='submit') Save changes
   section#admin-banner
